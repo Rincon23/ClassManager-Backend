@@ -1,0 +1,24 @@
+{
+  "name": "projeto-framework-ii-back-end",
+  "version": "1.0.0",
+  "description": "Projeto realizado a partir de um trabalho universitário (Back-End)",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rincon23/Projeto-Framework-II-Back-End.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rincon23/Projeto-Framework-II-Back-End/issues"
+  },
+  "homepage": "https://github.com/Rincon23/Projeto-Framework-II-Back-End#readme",
+  "type": "module",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
