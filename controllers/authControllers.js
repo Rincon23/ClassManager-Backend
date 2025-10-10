@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { users, objTest } from "../models/user.js";
+import { users } from "../models/user.js";
 import { SECRET_KEY } from "../config/auth.js";
 
 

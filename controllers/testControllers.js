@@ -1,3 +1,6 @@
+import {objTest} from "../models/userTest.js";
+
+
 export const protectedRoute = (req, res) => {
     res.status(200).json({message:"Bem vindo à rota autenticada"})
 }
