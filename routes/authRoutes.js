@@ -1,14 +1,7 @@
 import express from "express";
 const router = express.Router();
-import {adminRoute, login, protectedRoute, testRoute} from "../controllers/authControllers.js"
-import { authenticateToken, verifyAdmin } from "../middlewares/authMiddlewares.js";
+import { login } from "../controllers/authControllers.js"
 
 router.post("/login", login);
-
-router.get("/protected",authenticateToken, protectedRoute)
-
-router.get("/admin", authenticateToken, verifyAdmin, adminRoute)
-
-router.get('/', testRoute)
 
 export default router;
