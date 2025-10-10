@@ -22,7 +22,6 @@ export const protectedRoute = (req, res) => {
 }
 
 export const adminRoute = (req, res) => {
-    if (req.user.role !== 'admin') return res.status(403).json({message:"Sem permissão para acessar esta pagina!"});
     res.status(200).json({message:"Bem vindo a pagina ADM!"})
 }
 
