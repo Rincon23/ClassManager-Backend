@@ -1,1 +1,0 @@
-export const objTest = { name: 'Enzo', company: 'Anchieta' };

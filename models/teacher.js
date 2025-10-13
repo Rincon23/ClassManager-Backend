@@ -1,24 +1,18 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../config/database.js";
 
-export const User = sequelize.define("User", {
+export const Teacher = sequelize.define("Teacher", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  username: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true,
-  },
-  password: {
+  nome: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  role: {
+  disciplina: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: "user",
   },
-});
+  });
