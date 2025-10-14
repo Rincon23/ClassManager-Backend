@@ -1,0 +1,52 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: framework2-db
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: framework2
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -pexample || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  api:
+    build: .
+    container_name: framework2-api
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_NAME: framework2
+      DB_USER: root
+      DB_PASS: example
+    ports:
+      - "3000:3000"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: framework2-phpmyadmin
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: example
+      UPLOAD_LIMIT: 100M
+    ports:
+      - "8081:80"
+    restart: always
+
+volumes:
+  mysql_data:
