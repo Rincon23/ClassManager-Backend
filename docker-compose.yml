@@ -18,7 +18,7 @@ services:
       retries: 30
 
   api:
-    build: .
+    image: rincon23/framework2-api:latest
     container_name: framework2-api
     depends_on:
       db:
@@ -35,18 +35,17 @@ services:
       - "3000:3000"
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
+    image: phpmyadmin:latest
     container_name: framework2-phpmyadmin
     depends_on:
       - db
     environment:
       PMA_HOST: db
+      PMA_PORT: 3306
       PMA_USER: root
       PMA_PASSWORD: example
-      UPLOAD_LIMIT: 100M
     ports:
       - "8081:80"
-    restart: always
 
 volumes:
   mysql_data:
