@@ -2,16 +2,22 @@ import jwt from "jsonwebtoken";
 import { SECRET_KEY } from "../config/auth.js";
 
 export const authenticateToken = (req, res, next) => {
-    const token = req.headers['authorization'];
+  let token = req.headers["authorization"]; // ← aqui é let
 
-    if(!token) return res.status(403).json({message:"Token não fornecido!"});
+  if (!token) {
+    return res.status(403).json({ message: "Token não fornecido!" });
+  }
 
-    jwt.verify(token, SECRET_KEY, (err, user) =>{
-        if(err) return res.status(403).json({message:"Token inválido!"})
-        req.user = user;
-        next();
-    });
+  // Remove "Bearer " no swagger
+  token = token.replace(/^Bearer\s+/i, "").trim().replace(/^"|"$/g, "");
 
+  jwt.verify(token, SECRET_KEY, (err, user) => {
+    if (err) {
+      return res.status(403).json({ message: "Token inválido!" });
+    }
+    req.user = user;
+    next();
+  });
 };
 
 export const verifyAdmin = (req,res,next) => {

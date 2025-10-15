@@ -11,6 +11,8 @@ import { db } from "./models/index.js";
 const app = express();
 const PORT = 3000;
 
+//swagger
+import { swaggerUi, swaggerSpec } from "./config/swagger.js";
 
 //permitir que esses dominios façam requisições
 app.use(cors({
@@ -21,6 +23,8 @@ app.use(express.json());
 app.use(authRouter);
 app.use(teacherRouter);
 app.use(userRouter);
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 async function startServer() {
   try {
