@@ -2,9 +2,10 @@
 import express from "express";
 import cors from "cors";
 //Rotas
-import authRouter from "./routes/authRoutes.js";
-import teacherRouter from "./routes/teacherRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import authRouter from "./routes/authRoutes.js";
+import subjectRouter from "./routes/subjectRoutes.js";
+import teacherRouter from "./routes/teacherRoutes.js";
 //Banco de dados
 import { db } from "./models/index.js";
 
@@ -20,9 +21,10 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use(authRouter);
-app.use(teacherRouter);
 app.use(userRouter);
+app.use(authRouter);
+app.use(subjectRouter);
+app.use(teacherRouter);
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
