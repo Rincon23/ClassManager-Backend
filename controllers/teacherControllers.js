@@ -13,9 +13,9 @@ export const listTeacher = async (req, res) => {
 export const addTeacher = async (req, res) => {
   try {
 
-    const { disciplina } = req.body;
-    if (disciplina) {
-      const existSubject = await Subject.findOne({ where: { name:disciplina } });
+    const { subject } = req.body;
+    if (subject) {
+      const existSubject = await Subject.findOne({ where: { name:subject } });
       if (!existSubject) {
         return res.status(400).json({ message: "Não existe essa disciplina!" });
       }

@@ -33,13 +33,13 @@ teacherRouter.get("/teachers", authenticateToken, listTeacher);
  *           schema:
  *             type: object
  *             required:
- *               - nome
- *               - disciplina
+ *               - name
+ *               - subject
  *             properties:
- *               nome:
+ *               name:
  *                 type: string
  *                 example: João da Silva
- *               disciplina:
+ *               subject:
  *                 type: string
  *                 example: Matemática
  *     responses:

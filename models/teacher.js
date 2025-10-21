@@ -7,11 +7,11 @@ export const Teacher = sequelize.define("Teacher", {
     autoIncrement: true,
     primaryKey: true,
   },
-  nome: {
+  name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  disciplina: {
+  subject: {
     type: DataTypes.STRING,
   },
   });
