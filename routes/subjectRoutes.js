@@ -37,7 +37,7 @@ subjectRouter.get("/subject", authenticateToken, listSubject);
  *             properties:
  *               name:
  *                 type: string
- *                 example: Português
+ *                 example: Matemática
  *     responses:
  *       201:
  *         description: Diciplina criada com sucesso

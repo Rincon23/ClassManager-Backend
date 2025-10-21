@@ -6,6 +6,8 @@ import userRouter from "./routes/userRoutes.js";
 import authRouter from "./routes/authRoutes.js";
 import subjectRouter from "./routes/subjectRoutes.js";
 import teacherRouter from "./routes/teacherRoutes.js";
+import classRouter from "./routes/classRoutes.js";
+
 //Banco de dados
 import { db } from "./models/index.js";
 
@@ -25,6 +27,8 @@ app.use(userRouter);
 app.use(authRouter);
 app.use(subjectRouter);
 app.use(teacherRouter);
+app.use(classRouter);
+
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
