@@ -1,8 +1,22 @@
 import express from "express";
-import { addSubject } from "../controllers/subjectController.js";
+import { addSubject, listSubject } from "../controllers/subjectController.js";
 import { authenticateToken, verifyAdmin } from "../middlewares/authMiddlewares.js";
 
 const subjectRouter = express.Router();
+
+/**
+ * @swagger
+ * /subject:
+ *   get:
+ *     summary: Lista todas as disciplinas
+ *     tags: [Disciplina]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Lista de Disciplina retornada
+ */
+subjectRouter.get("/subject", authenticateToken, listSubject);
 
 /**
  * @swagger
@@ -33,5 +47,9 @@ const subjectRouter = express.Router();
  *         description: Sem permissão (somente admin)
  */
 subjectRouter.post("/subject", authenticateToken, verifyAdmin, addSubject);
+
+
+
+
 
 export default subjectRouter;

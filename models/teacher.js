@@ -13,6 +13,5 @@ export const Teacher = sequelize.define("Teacher", {
   },
   disciplina: {
     type: DataTypes.STRING,
-    allowNull: false,
   },
   });

@@ -18,3 +18,14 @@ export const addSubject = async (req, res) => {
 }
 
 };
+
+export const listSubject = async (req, res) => {
+  try {
+    const subjects = await Subject.findAll();
+      res.status(200).json(subjects);
+
+  } catch (error) {
+      console.error("❌ Erro ao criar usuário:", error);
+      res.status(500).json({ message: "Erro ao criar usuário", error: error.message });
+  }
+};

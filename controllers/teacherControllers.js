@@ -1,4 +1,5 @@
 import { Teacher } from "../models/teacher.js";
+import { Subject } from "../models/subject.js";
 
 export const listTeacher = async (req, res) => {
   try {
@@ -11,8 +12,17 @@ export const listTeacher = async (req, res) => {
 
 export const addTeacher = async (req, res) => {
   try {
+
+    const { disciplina } = req.body;
+    if (disciplina) {
+      const existSubject = await Subject.findOne({ where: { name:disciplina } });
+      if (!existSubject) {
+        return res.status(400).json({ message: "Não existe essa disciplina!" });
+      }
+    }
     const addteacher = await Teacher.create(req.body);
     res.status(201).json(addteacher);
+
   } catch (error) {
     res.status(500).json({ message: "Erro ao criar professor", error });
   }

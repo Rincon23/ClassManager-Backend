@@ -15,8 +15,6 @@ const teacherRouter = express.Router();
  *     responses:
  *       200:
  *         description: Lista de professores retornada
- *       403:
- *         description: Token inválido ou ausente
  */
 teacherRouter.get("/teachers", authenticateToken, listTeacher);
 
@@ -44,14 +42,13 @@ teacherRouter.get("/teachers", authenticateToken, listTeacher);
  *               disciplina:
  *                 type: string
  *                 example: Matemática
- *               email:
- *                 type: string
- *                 example: joao@escola.com
  *     responses:
  *       201:
  *         description: Professor criado com sucesso
  *       403:
  *         description: Sem permissão (somente admin)
+ *       400:
+ *          description: Não existe essa disciplina
  */
 teacherRouter.post("/teachers", authenticateToken, verifyAdmin, addTeacher);
 
