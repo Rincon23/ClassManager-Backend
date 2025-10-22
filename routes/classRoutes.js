@@ -1,5 +1,5 @@
 import express from "express";
-import { addClass } from "../controllers/classControllers.js";
+import { addClass, listClass } from "../controllers/classControllers.js";
 import { authenticateToken, verifyAdmin } from "../middlewares/authMiddlewares.js";
 
 const classRouter = express.Router();
@@ -7,9 +7,23 @@ const classRouter = express.Router();
 /**
  * @swagger
  * /class:
+ *   get:
+ *     summary: Lista todos as aulas
+ *     tags: [Aulas]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Lista de alunos retornada
+ */
+classRouter.get("/class", authenticateToken, listClass);
+
+/**
+ * @swagger
+ * /class:
  *   post:
  *     summary: Adiciona uma nova aula
- *     tags: [Aula]
+ *     tags: [Aulas]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -38,14 +52,14 @@ const classRouter = express.Router();
  *                 example: Matemática
  *                  
  *     responses:
+ *       200:
+ *         description: Aula criada com sucesso!
  *       400:
  *         description: Já existe aula neste dia e horário.
  *       404:
  *         description: Professor ou disciplina não encontrados
  *       401:
- *         description: O professor (Nome do professor) não leciona a disciplina (Nome da disciplina).
- *       200:
- *         descripition: Aula criada com sucesso!
+ *         description: O professor (Nome do professor) não leciona a disciplina (Nome da disciplina). 
  */
 classRouter.post("/class", authenticateToken, verifyAdmin, addClass);
 

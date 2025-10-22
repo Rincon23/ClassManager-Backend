@@ -38,3 +38,12 @@ export const addClass = async (req, res) => {
   });
 }
 }
+
+export const listClass = async (req, res) => {
+  try {
+    const Classes = await Class.findAll();
+    res.status(200).json(Classes);
+  } catch (error) {
+    res.status(500).json({ message: "Erro ao listar aulas", error });
+  }
+};
