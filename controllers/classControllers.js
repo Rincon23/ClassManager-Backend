@@ -13,21 +13,23 @@ export const addClass = async (req, res) => {
     }
 
     // Busca o professor e a disciplina
-    const teacherFound = await Teacher.findOne({ where: { name: teacher } });
+    const teachersFound = await Teacher.findAll({ where: { name: teacher } });
     const subjectFound = await Subject.findOne({ where: { name: subject } });
 
-    if (!teacherFound || !subjectFound) {
+    if (!teachersFound.length || !subjectFound) {
       return res.status(404).json({ message: "Professor ou disciplina não encontrados." });
     }
 
+
     // Verifica se o professor leciona a disciplina
-    if (teacherFound.subject  !== subjectFound.name) {
-        return res.status(400).json({ message: `O professor ${teacherFound.name} não leciona a disciplina ${subjectFound.name}.`,
+    const matchingTeacher = teachersFound.find(t => t.subject === subjectFound.name);
+    if (!matchingTeacher) {
+        return res.status(400).json({ message: `O professor ${teacher} não leciona a disciplina ${subjectFound.name}.`,
         });
     }
 
     //Cria nova aula
-    const addclass = await Class.create({date, timeSlot, teacher: teacherFound.name, subject: subjectFound.name,});
+    const addclass = await Class.create({date, timeSlot, teacher: matchingTeacher.name, subject: subjectFound.name,});
     res.status(201).json(addclass); 
 
     } catch (error) {

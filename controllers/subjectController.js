@@ -42,7 +42,7 @@ export const deleteSubject = async (req, res) => {
     res.status(200).json({ message: "Disciplina foi removida!" });
   } catch (error) {
       console.error("❌ Erro ao deletar disciplina:", error);
-      res.status(500).json({ message: "Erro ao criar disciplina", error: error.message });
+      res.status(500).json({ message: "Erro ao deletar disciplina", error: error.message });
   }
 }
 

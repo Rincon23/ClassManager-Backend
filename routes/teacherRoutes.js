@@ -1,5 +1,5 @@
 import express from "express";
-import { listTeacher, addTeacher } from "../controllers/teacherControllers.js";
+import { listTeacher, addTeacher, deleteTeacher, patchTeacher } from "../controllers/teacherControllers.js";
 import { authenticateToken, verifyAdmin } from "../middlewares/authMiddlewares.js";
 
 const teacherRouter = express.Router();
@@ -9,7 +9,7 @@ const teacherRouter = express.Router();
  * /teachers:
  *   get:
  *     summary: Lista todos os professores
- *     tags: [Professores]
+ *     tags: [Professor]
  *     security:
  *       - bearerAuth: []
  *     responses:
@@ -23,7 +23,7 @@ teacherRouter.get("/teachers", authenticateToken, listTeacher);
  * /teachers:
  *   post:
  *     summary: Adiciona um novo professor
- *     tags: [Professores]
+ *     tags: [Professor]
  *     security:
  *       - bearerAuth: []
  *     requestBody:
@@ -51,5 +51,67 @@ teacherRouter.get("/teachers", authenticateToken, listTeacher);
  *          description: Não existe essa disciplina
  */
 teacherRouter.post("/teachers", authenticateToken, verifyAdmin, addTeacher);
+
+/**
+ * @swagger
+ * /teachers:
+ *   delete:
+ *     summary: Deleta uma professor pelo nome
+ *     tags: [Professor]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - name
+ *             properties:
+ *               name:
+ *                 type: string
+ *                 example: João da Silva
+ *     responses:
+ *       200:
+ *         description: Professor deletado
+ *       404:
+ *         description: Professor não existe
+ */
+teacherRouter.delete("/teachers", authenticateToken, verifyAdmin, deleteTeacher);
+
+/**
+ * @swagger
+ * /teachers:
+ *   patch:
+ *     summary: Altera um professor pelo nome
+ *     tags: [Professor]
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - oldName
+ *               - newName
+ *             properties:
+ *               oldName:
+ *                 type: string
+ *                 example: João da Silva
+ *               newName:
+ *                 type: string
+ *                 example: João Bezerra
+ *     responses:
+ *       200:
+ *         description: Professor alterado
+ *       404:
+ *         description: Professor não existe
+ *       400:
+ *         description: Nome do professor já está em uso
+ */
+teacherRouter.patch("/teachers", authenticateToken, verifyAdmin, patchTeacher);
 
 export default teacherRouter;

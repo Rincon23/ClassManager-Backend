@@ -20,6 +20,12 @@ export const Class = sequelize.define("Class", {
       "21:50 - 22:40"
     ),
     allowNull: false,
+     validate: {
+      isIn: {
+        args: [["19:10 - 20:00", "20:00 - 20:50", "21:00 - 21:50", "21:50 - 22:40"]],
+        msg: "Horário inválido! Escolha um dos horários disponíveis."
+      }
+    }
   },
 
   teacher: {
