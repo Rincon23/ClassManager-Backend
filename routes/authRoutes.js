@@ -15,12 +15,12 @@ import { login } from "../controllers/authControllers.js"
  *           schema:
  *             type: object
  *             required:
- *               - username
+ *               - email
  *               - password
  *             properties:
- *               username:
+ *               email:
  *                 type: string
- *                 example: Enzo
+ *                 example: enzorincon2003@gmail.com
  *               password:
  *                 type: string
  *                 example: 12345678
@@ -28,7 +28,7 @@ import { login } from "../controllers/authControllers.js"
  *       200:
  *         description: Login bem-sucedido
  *       401:
- *         description: Usuário ou senha inválidos
+ *         description: Email ou senha inválidos
  */
 authRouter.post("/login", login);
 

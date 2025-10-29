@@ -3,11 +3,11 @@ import { SECRET_KEY } from "../config/auth.js";
 import { User } from "../models/user.js";
 
 export const login = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   try {
     // busca o usuário no banco
-    const user = await User.findOne({ where: { username } });
+    const user = await User.findOne({ where: { email } });
 
     // verifica se achou e se a senha confere
     if (user && user.password === password) {

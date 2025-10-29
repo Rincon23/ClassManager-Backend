@@ -2,18 +2,19 @@ import { User } from "../models/user.js";
 
 export const createUser = async (req, res) => {
   try {
-    const { username, password, role } = req.body;
+    const { email, username, password, role } = req.body;
 
-    if (!username || !password) {
-      return res.status(400).json({ message: "Usuário e senha são obrigatórios" });
+    if (!email || !password || !username) {
+      return res.status(400).json({ message: "Email, usuário e senha são obrigatórios" });
     }
 
-    const existingUser = await User.findOne({ where: { username } });
-    if (existingUser) {
-      return res.status(400).json({ message: "Usuário já existe" });
+    const existingEmail = await User.findOne({ where: { email } });
+    if (existingEmail) {
+      return res.status(409).json({ message: "Email já existe" });
     }
 
     const newUser = await User.create({
+      email,
       username,
       password,
       role: role || "user",

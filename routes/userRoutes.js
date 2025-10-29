@@ -8,7 +8,7 @@ const userRouter = express.Router();
  * /users:
  *   post:
  *     summary: Cria um novo usuário
- *     tags: [Usuários]
+ *     tags: [Users]
  *     requestBody:
  *       required: true
  *       content:
@@ -16,9 +16,13 @@ const userRouter = express.Router();
  *           schema:
  *             type: object
  *             required:
+ *               - email
  *               - username
  *               - password
  *             properties:
+ *               email:
+ *                 type: string
+ *                 example: enzorincon2003@gmail.com
  *               username:
  *                 type: string
  *                 example: Enzo
@@ -32,7 +36,9 @@ const userRouter = express.Router();
  *       201:
  *         description: Usuário criado com sucesso
  *       400:
- *         description: Usuário já existe
+ *         description: Email, usuário e senha são obrigatórios
+ *       409:
+ *         description: Email já existe
  */
 userRouter.post("/users", createUser);
 
