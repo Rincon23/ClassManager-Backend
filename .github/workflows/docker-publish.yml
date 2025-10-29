@@ -39,4 +39,4 @@ jobs:
         run: |
           docker pull phpmyadmin/phpmyadmin:latest
           docker tag phpmyadmin/phpmyadmin:latest rincon23/classmanager-phpmyadmin:latest
-          docker push rincon23/framework2-classmanager:latest
+          docker push rincon23/classmanager-phpmyadmin:latest
