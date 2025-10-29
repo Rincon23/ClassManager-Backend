@@ -27,16 +27,16 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: rincon23/framework2-api:latest
+          tags: rincon23/ClassManager-backend:latest
 
       - name: 🧱 Push MySQL image
         run: |
           docker pull mysql:8.0
-          docker tag mysql:8.0 rincon23/framework2-db:latest
-          docker push rincon23/framework2-db:latest
+          docker tag mysql:8.0 rincon23/ClassManager-db:latest
+          docker push rincon23/ClassManager-db:latest
 
       - name: 🧱 Push phpMyAdmin image
         run: |
           docker pull phpmyadmin/phpmyadmin:latest
-          docker tag phpmyadmin/phpmyadmin:latest rincon23/framework2-phpmyadmin:latest
-          docker push rincon23/framework2-phpmyadmin:latest
+          docker tag phpmyadmin/phpmyadmin:latest rincon23/ClassManager-phpmyadmin:latest
+          docker push rincon23/framework2-ClassManager:latest
