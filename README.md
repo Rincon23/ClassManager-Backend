@@ -1,79 +1,64 @@
-# 📘 Descritivo do Trabalho – Desenvolvimento Framework II
+<h1 align="center">ClassManager</h1>
 
-## 🎯 Objetivo
-Desenvolver uma API backend em Javascript para um sistema Web.  
-O grupo poderá:
+<p align="center">
+  <img src="ImagemProjeto.png" width="500" alt="Logo do projeto">
+</p>
 
-- Reutilizar o site desenvolvido no trabalho do semestre passado criando a camada de backend  
-- Ou criar um novo módulo complementar ao site desenvolvido durante o semestre, disponível em (ver sugestões abaixo de módulos para o site.):  
-  👉 [https://github.com/fernandodomeneghetti/devops-turma-a](https://github.com/fernandodomeneghetti/devops-turma-a)
-
----
-
-## 🧩 Requisitos Técnicos
-
-### Tecnologias obrigatórias:
-- Javascript  
-- Sequelize ou TypeORM  
-- JWT (para autenticação)  
-- Swagger (para documentação da API)
-
-### Infraestrutura e integração:
-- API e frontend publicados via GitHub Actions (Continuous Deployment).  
-- Utilização de containers (Docker) para rodar a aplicação e o banco de dados.  
-- O frontend deve se comunicar com a API, realizando cadastros e leituras.  
-- Todas as requisições devem exigir autenticação via token JWT.
+<p align="center">
+  <b>Sistema moderno de gestão acadêmica</b><br>
+  Desenvolvido como projeto da disciplina Framework II
+</p>
 
 ---
 
-## 📂 Entregáveis
-Repositório privado no GitHub, contendo:
+## 🚀 Repositório principal
 
-- Código-fonte da API e do frontend.  
-- Documentação no README.md, incluindo:
-  - Descrição do projeto e proposta do sistema.  
-  - Instruções para execução local.  
-  - Swagger atualizado e acessível para testes durante a apresentação.
+🔗 O projeto completo (com API, front-end, Docker e documentação detalhada) está no repositório **[ClassManager](https://github.com/Rincon23/Projeto-Framework-II/tree/master)**!
+
+Lá você encontra:
+
+- 📌 **README completo** com instruções detalhadas  
+- 💻 **Passo a passo** para rodar com Docker  
+- 🧩 **Explicação das tecnologias utilizadas**  
+- 📷 **Imagens e vídeos do sistema em funcionamento**  
+
+---
+## 📞 Créditos e Contato
+
+<h3> Desenvolvido por <a href= https://rincon23.github.io/>Enzo Rincon</a></h3> 
+
+<p>📍 Localização: São Paulo 
+<p>💼 Áreas de interesse: Desenvolvimento Fullstack.
+<p>📢 Aberto a oportunidades profissionais na área de desenvolvimento
 
 ---
 
-## 📆 Entrega e Apresentação
-**Data:** 03/11 (segunda-feira)  
-**Formato:** Apresentação presencial  
-**Tempo por grupo:** até 10 minutos
+### 📬 Como entrar em contato?
 
-Durante a apresentação:
-- Demonstração do site consumindo a API.  
-- Demonstração da API no Swagger.  
-- O professor solicitará um cadastro ao vivo via Swagger, que deverá refletir no site imediatamente.
+<p>Curtiu o projeto? Quer dar um feedback, trocar ideia sobre tecnologia ou até falar de vagas?</p>
+<p>Tô sempre aberto a conversar! É só me chamar nos links aí embaixo 👇</p>
 
----
+<table> 
+    <tr>
+        <td><strong>📧 E-mail:</strong></td> 
+        <td><a href="mailto:enzorincon2003@gmail.com">enzorincon2003@gmail.com</a></td> 
+    </tr>
+    <tr> 
+        <td><strong>💼 LinkedIn:</strong></td> 
+        <td><a href="https://www.linkedin.com/in/enzorincon">linkedin.com/in/enzorincon</a></td> 
+    </tr> 
+    <tr> 
+        <td><strong>📷 Instagram:</strong></td> 
+        <td><a href="https://www.instagram.com/enzo.rincon">@enzo.rincon</a></td> 
+    </tr> 
+    <tr> 
+        <td><strong>🌐 Portifólio:</strong></td> 
+        <td><a href="https://rincon23.github.io/">https://rincon23.github.io/</a></td> 
+    </tr> 
 
-## 🧑‍🤝‍🧑 Grupos
-Cada grupo deve ter até 5 integrantes.  
-Todos os membros devem participar da explicação ou execução durante a apresentação.
-
----
-
-## ✅ Critérios de Avaliação
-
-| Critério | Descrição |
-|-----------|------------|
-| **Funcionalidade da API** | CRUD completo, autenticação JWT, rotas documentadas no swagger. |
-| **Integração** | Comunicação efetiva entre site e API. |
-| **Containers** | Uso de Docker para ambiente padronizado. |
-| **Documentação** | README e Swagger completos e claros. |
-| **Participação** | Engajamento equilibrado de todos os integrantes. |
+</table>
 
 ---
 
-## 💡 Sugestões de Temas / Módulos
-Os grupos podem escolher qualquer módulo complementar ao site do semestre anterior.  
-**Sugestões:**
-- Cadastro e gerenciamento de professores – CRUD de docentes, vinculação a disciplinas e horários.  
-- Cadastro de laboratórios e agendamento de uso – controle de reservas, disponibilidade e capacidade.  
-- Sistema de turmas e matrículas – vincular alunos, professores e disciplinas.  
-- Controle de presença e frequência – registro e consulta de presenças por turma.  
-- Módulo de avaliações e notas – cadastro de provas, notas e médias automáticas.  
-- Gestão de recursos e equipamentos – inventário de equipamentos, manutenção e status.  
-- Módulo de comunicação interna – mensagens entre alunos, professores e administração (ex: mural de avisos ou chat simples).
+⭐ Obrigado por visitar este projeto! ⭐
+
