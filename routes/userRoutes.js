@@ -22,13 +22,13 @@ const userRouter = express.Router();
  *             properties:
  *               email:
  *                 type: string
- *                 example: enzorincon2003@gmail.com
+ *                 example: admin@gmail.com
  *               username:
  *                 type: string
- *                 example: Enzo
+ *                 example: admin
  *               password:
  *                 type: string
- *                 example: 12345678
+ *                 example: admin
  *               role:
  *                 type: string
  *                 example: admin

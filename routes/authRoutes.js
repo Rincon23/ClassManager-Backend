@@ -20,10 +20,10 @@ import { login } from "../controllers/authControllers.js"
  *             properties:
  *               email:
  *                 type: string
- *                 example: enzorincon2003@gmail.com
+ *                 example: admin@gmail.com
  *               password:
  *                 type: string
- *                 example: 12345678
+ *                 example: admin
  *     responses:
  *       200:
  *         description: Login bem-sucedido
