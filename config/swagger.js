@@ -12,8 +12,8 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000",
-        description: "Servidor local",
+        url: process.env.NEXT_PUBLIC_API_URL,
+        description: "Servidor publico",
       },
     ],
     components: {
