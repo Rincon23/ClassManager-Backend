@@ -19,7 +19,7 @@ import { swaggerUi, swaggerSpec } from "./config/swagger.js";
 
 //permitir que esses dominios façam requisições
 app.use(cors({
-  origin: ["http://127.0.0.1:5500", "http://localhost:8080", "http://localhost:3001", process.env.NEXT_PUBLIC_API_URL]
+  origin: ["http://127.0.0.1:5500", "http://localhost:8080", "http://localhost:3001"]
 }));
 
 app.use(express.json());
