@@ -19,7 +19,7 @@ import { swaggerUi, swaggerSpec } from "./config/swagger.js";
 
 //permitir que esses dominios façam requisições
 app.use(cors({
-  origin: ["http://127.0.0.1:5500", "http://localhost:8080", "http://localhost:3001", "http://100.87.133.102:3001"]
+  origin: ["http://127.0.0.1:5500", "http://localhost:8080", "http://localhost:3001", "https://classmanager.diagrafy.com.br"]
 }));
 
 app.use(express.json());
